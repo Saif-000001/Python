@@ -1,0 +1,1 @@
+{"name":"Local: Balloons","url":"/home/saiful_islam/Program/Python/div_2A/Balloons.cpp","tests":[{"id":1699792663973,"input":"3\n1 2 1","output":"1 2"},{"id":1699792677688,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/saiful_islam/Program/Python/div_2A/Balloons.cpp","group":"local","local":true}

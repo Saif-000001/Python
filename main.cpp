@@ -8,49 +8,59 @@ typedef long double ld;
 #define HERE
 #define debug(args...)
 #endif
+const int MOD = 1000000007;
 const int N = 2e5 + 5;
 typedef pair<int, int> pii;
 
-
-int binarySearch(vector<int> a, int n, int x)
-{
-    int l = 0, r = n;
-    while (l <= r)
-    {
-        int mid = l + (r - l) / 2;
-        if (a[mid] == x)
-            return mid;
-        else if (a[mid] < x)
-            l = mid + 1;
-        else
-            r = mid - 1;
-    }
-    return -1;
-}
-
 void TEST_CASES()
 {
-    int n, q;
-    int t = 1;
-    while (cin >> n >> q, n || q)
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    map<int, int> mp;
+    for (int i = 0; i < n; i++)
     {
-        vector<int> a(n);
-        for (int i = 0; i < n; i++)
-            cin >> a[i];
-        sort(a.begin(), a.end());
-
-        cout << "CASE# " << t++ << ":\n";
-        while (q--)
-        {
-            int x;
-            cin >> x;
-            int ans = binarySearch(a, n, x);
-            if (ans == -1)
-                 cout << x << " not found\n";
-            else
-                cout << x << " found at " << ans << '\n';
-        }
+        cin >> a[i];
+        mp[a[i]]++;
     }
+
+    vector<int> add;
+    for (auto it : mp)
+    {
+        if (it.second >= 2)
+            add.push_back(it.first);
+    }
+
+    if (add.size() < 2)
+    {
+        cout << -1 << "\n";
+        return;
+    }
+
+    vector<int> ans;
+    bool f1 = false, f2 = false;
+    for (auto i : a)
+    {
+        if (i == add[0])
+        {
+            ans.push_back(f1 ? 2 : 1);
+            f1 = true;
+        }
+        else if (i == add[1])
+        {
+            ans.push_back(f2 ? 3 : 1);
+            f2 = true;
+        }
+        else
+            ans.push_back(1);
+    }
+
+    for (auto i : ans)
+    {
+        if (i > 0)
+            cout << i << " ";
+    }
+    cout << "\n";
 }
 
 int32_t main()
@@ -59,7 +69,11 @@ int32_t main()
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 #endif
-    TEST_CASES();
-
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        TEST_CASES();
+    }
     return 0;
 }
