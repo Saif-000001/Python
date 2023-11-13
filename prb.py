@@ -51,6 +51,7 @@ while t>0 :
     t-=1
 """
 
+"""
 def fn():
     n =int(input())
     a = [int(i) for i in input().split()]
@@ -75,3 +76,21 @@ def fn():
     print(1)
     print(mx+1)
 fn()
+"""
+
+# Sonya_and_Hotels
+"""
+n, m = input().split()
+a = [int(i)for i in input().split()]
+d = int(m)
+d+=d
+ans = 2
+for i in range(0,int(n)-1):
+    if a[i+1]-a[i]==d:
+        ans+=1
+    elif a[i+1]-a[i]>d:
+        ans+=2
+print(ans)
+"""
+
+
