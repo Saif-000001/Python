@@ -93,4 +93,26 @@ for i in range(0,int(n)-1):
 print(ans)
 """
 
+# Stages
 
+n, m = map(int, input().split())
+s = input().strip()
+
+s = ''.join(sorted(s))
+
+ch = ord('a')-2
+ans = 0
+l = 0
+f = False
+for i in range(n):
+    if ord(s[i]) >= ch+2:
+        ch = ord(s[i])
+        ans += ord(s[i])-ord('a')+1
+        l+=1
+        if l>=m:
+            f = True
+            break
+if f:
+    print(ans)
+else :
+    print(-1)
