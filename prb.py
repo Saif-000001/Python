@@ -95,6 +95,7 @@ print(ans)
 
 # Stages
 
+"""
 n, m = map(int, input().split())
 s = input().strip()
 
@@ -116,3 +117,24 @@ if f:
     print(ans)
 else :
     print(-1)
+"""
+
+# Piles With Stones
+
+"""
+n = int(input())
+a = [int(i) for i in input().split()]
+b = [int(i) for i in input().split()]
+
+f ,l= 0, 0
+
+for i in a:
+    f+=i
+for i in b:
+    l+=i
+
+if f >= l:
+    print("YES")
+else :
+    print("NO")
+"""
