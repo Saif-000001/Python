@@ -34,3 +34,31 @@
 # for i in range(1, n+1):
 #     ans*=i
 # print(ans)
+
+# a = [
+#     ["", "", "*", "", ""],
+#     ["", "*", "*", ""],
+#     ["*",   "*",    "*", "", ""],
+    
+# ]
+
+# for i in a:
+#  print(" ".join(i))
+
+"""
+for i in range(0,5):
+    for j in range(0,i+1):
+        if j == i:
+            print("*", end="")
+        else :
+            print(" ", end="")
+    print()
+"""
+
+# for i in range(5+1, 0, -1):
+#     for j in range(0, i+1):
+#         if i == j:
+#             print("*", end="")
+#         else :
+#             print(" ", end="")
+#     print()
